@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Vridhi Wealth - AMFI Registered MFD Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary": "#00190e",
+          "on-error-container": "#93000a",
+          "on-secondary-container": "#663500",
+          "outline-variant": "#c1c8c3",
+          "inverse-on-surface": "#eaf1ff",
+          "tertiary-fixed-dim": "#4edea3",
+          "surface-bright": "#f8f9ff",
+          "on-primary-fixed-variant": "#2c4d41",
+          "surface-container-highest": "#d3e4fe",
+          "surface-variant": "#d3e4fe",
+          "on-tertiary-fixed-variant": "#005236",
+          "outline": "#717974",
+          "secondary": "#904d00",
+          "surface": "#f8f9ff",
+          "primary": "#001911",
+          "on-background": "#0b1c30",
+          "on-error": "#ffffff",
+          "primary-fixed": "#c6ebda",
+          "secondary-fixed": "#ffdcc3",
+          "on-primary-container": "#759889",
+          "surface-container-lowest": "#ffffff",
+          "background": "#f8f9ff",
+          "primary-fixed-dim": "#aacebe",
+          "tertiary-container": "#00301e",
+          "surface-container-low": "#eff4ff",
+          "on-secondary-fixed": "#2f1500",
+          "inverse-primary": "#aacebe",
+          "on-secondary-fixed-variant": "#6e3900",
+          "on-primary-fixed": "#002117",
+          "primary-container": "#0d2f24",
+          "error-container": "#ffdad6",
+          "on-tertiary": "#ffffff",
+          "on-tertiary-fixed": "#002113",
+          "secondary-fixed-dim": "#ffb77d",
+          "on-surface-variant": "#414845",
+          "error": "#ba1a1a",
+          "surface-container-high": "#dce9ff",
+          "on-tertiary-container": "#00a472",
+          "secondary-container": "#fe932c",
+          "inverse-surface": "#213145",
+          "surface-tint": "#446558",
+          "on-surface": "#0b1c30",
+          "surface-dim": "#cbdbf5",
+          "on-primary": "#ffffff",
+          "surface-container": "#e5eeff",
+          "tertiary-fixed": "#6ffbbe",
+          "on-secondary": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2.5rem",
+          "space-xs": "0.25rem",
+          "margin": "2rem",
+          "space-md": "1rem",
+          "gutter": "1.5rem",
+          "gutter-mobile": "1rem",
+          "space-lg": "1.5rem",
+          "margin-mobile": "1rem",
+          "space-sm": "0.5rem"
+        },
+        "fontFamily": {
+          "body-sm": ["Inter"],
+          "body-md": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "display": ["Plus Jakarta Sans"],
+          "label-md": ["Inter"],
+          "metric-val": ["Inter"],
+          "title-md": ["Inter"],
+          "label-sm": ["Inter"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "title-lg": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "body-lg": ["Inter"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+          "display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+          "metric-val": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "title-lg": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-surface-container-low px-gutter py-space-xs text-on-surface-variant font-label-sm text-label-sm"><div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm"> <div class="flex items-center gap-space-lg"><span class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-on-surface font-semibold">SENSEX</span> 72,426.64 <span class="text-on-tertiary-container font-semibold">+0.42%</span></span><span class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-on-surface font-semibold">NIFTY 50</span> 22,040.70 <span class="text-on-tertiary-container font-semibold">+0.38%</span></span><span class="hidden md:flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-on-surface font-semibold">GOLD (24K)</span> ₹62,450/10g</span></div><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-space-xs text-on-primary-fixed-variant"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span> BSE StAR MF Processing Active • Same-day NAV cut-off: 3:00 PM</span></div></div></div><div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><img alt="Vridhi Wealth Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WhcJU0mSzHM-QgnhWfTR-gQafggMmxOPy8NbTHkUzPELTnDMYbux5hR7HScaE44bYV72IwF4tyq3ANF96ib1DQ-8dVYOOE1Hdju559zGY0dC9nDcUYMoOUerblgkZc9yTC5oxPYkYS6I-8hTg-_jZ5FXoVjA-owZYRrZGTB8v_mznWHDz-4Fvx8Rk3SNB88BOxWQWJGSFkFiwO1R_m_dfWk-ButWy_0CuEZB0zF--gMNfXCTKWjqsJ7G0g"/><div class="flex flex-col"><span class="font-title-lg text-title-lg text-primary leading-none">Vridhi Wealth</span><span class="font-label-sm text-label-sm text-secondary font-semibold">AMFI Registered MFD • ARN-184920</span></div></div><nav class="hidden xl:flex items-center gap-space-xs p-space-xs" data-active-classes="bg-surface-container text-on-surface font-semibold rounded-lg"><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-surface-container text-on-surface font-semibold rounded-lg" data-path="dashboard" href="#">Dashboard</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg" data-path="explore-funds" href="#">Explore Funds</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg" data-path="goals-and-sips" href="#">Goals &amp; SIPs</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg" data-path="transactions-and-reports" href="#">Transactions &amp; Reports</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg flex items-center gap-space-xs" data-path="distributor-portal" href="#"><span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wide">MFD</span> Distributor Portal</a></nav></div><div class="flex items-center gap-space-sm"><button class="hidden lg:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg font-body-sm text-body-sm" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span>Search schemes...</span><kbd class="px-space-xs bg-surface-container-lowest text-on-surface rounded text-[10px] font-semibold">Ctrl+K</kbd></button><div class="hidden 2xl:flex flex-col text-right"><span class="font-label-sm text-label-sm text-on-surface-variant">Advisor: Rajesh Sharma</span><span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant font-medium">ARN-184920 (Verified)</span></div><div class="relative"><button class="flex items-center gap-space-xs px-space-md py-space-xs bg-primary-container text-on-primary font-label-md text-label-md rounded-lg shadow-sm hover:bg-primary transition-all" type="button"><span>Invest Now</span><span class="material-symbols-outlined text-[18px]">arrow_drop_down</span></button></div><button class="p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-full relative" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary-container"></span></button><div class="flex items-center gap-space-xs pl-space-xs border-l border-outline-variant/30"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy_VcZgSNi49GIwtk0RioScE7VxFzJLDaiS-IOPSU8Ilz2RjLfDXGl53yzcFB3nhkFairbv1IhY8TaKx4UyEEsx9VlckGTPYKznB_ntcYovCQbaYIoVlFJ4Wi1Rwcxu1IlKY6TqtXqUDj7PUOvhsSOZ24rJ2xhEPN8CzWhsyuTVS58be_4ba7NtkD9Yfaqkvn5nHqNxnQ45l4SS5ImaMshVsFz99i-YgJA6Dgx2sG2unwFjCK8Wbh4hQ"/><span class="material-symbols-outlined absolute -bottom-1 -right-1 text-[14px] bg-surface-container-lowest text-on-tertiary-container rounded-full">check_circle</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Aditya Verma</span><span class="font-label-sm text-label-sm text-on-tertiary-container font-medium leading-none">KYC Verified</span></div></div></div></div></header><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Greeting & AMFI Reassurance Ribbon -->
+<div class="max-w-7xl mx-auto w-full px-gutter pt-space-md mb-space-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-xs">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+            Portfolio Refresh: Today, 09:15 AM IST
+          </span>
+<span class="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-fixed-variant">verified_user</span>
+            BSE StAR MF Linked
+          </span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Good morning, Aditya!</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Here is your consolidated mutual fund wealth summary and performance as of today.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">tune</span>
+<span>Analyze Allocation</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Start New SIP</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Hero Portfolio Value Cards -->
+<div class="max-w-7xl mx-auto w-full px-gutter mb-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Card 1: Current Portfolio Value -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-36 h-36 bg-surface-container-low rounded-full opacity-60 pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Current Portfolio Value</span>
+<span class="p-1 rounded-full bg-surface-container text-on-surface-variant" title="Updated daily at cut-off NAV">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</span>
+</div>
+<div class="font-display text-display text-primary tracking-tight font-semibold flex items-baseline gap-1">
+<span>₹28,45,210</span>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-tertiary-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+₹14,820 (+0.52%)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal ml-0.5">today</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">7 Active Schemes</span>
+</div>
+</div>
+<!-- Card 2: Total Invested -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block mb-1">Total Invested</span>
+<div class="font-metric-val text-metric-val text-on-surface">₹19,50,000</div>
+</div>
+<div class="pt-space-md mt-space-xs text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">account_balance_wallet</span>
+<span>Net principal deployed</span>
+</div>
+</div>
+<!-- Card 3: Total Returns -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block mb-1">Total Returns</span>
+<div class="font-metric-val text-metric-val text-on-tertiary-container flex items-baseline gap-1">
+<span>+₹8,95,210</span>
+</div>
+</div>
+<div class="pt-space-md mt-space-xs flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+            +45.91% Gain
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Absolute</span>
+</div>
+</div>
+<!-- Card 4: Portfolio XIRR & SIP Book -->
+<div class="bg-primary-container text-on-primary rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider block">Portfolio XIRR</span>
+<div class="font-metric-val text-metric-val text-tertiary-fixed font-bold mt-0.5">+16.85% <span class="text-body-sm font-normal text-on-primary-container">p.a.</span></div>
+</div>
+<span class="p-1 rounded bg-tertiary-container text-tertiary-fixed-dim" title="Calculated using exact cash flows across investments and redemptions">
+<span class="material-symbols-outlined text-[16px]">show_chart</span>
+</span>
+</div>
+<div class="pt-space-md mt-space-xs">
+<div class="text-on-primary-container font-label-sm text-label-sm">Active Monthly SIP Book</div>
+<div class="font-title-md text-title-md text-on-primary flex items-center justify-between">
+<span>₹35,000<span class="font-body-sm text-body-sm text-on-primary-container font-normal">/mo</span></span>
+<span class="text-secondary-fixed text-label-sm font-label-sm">5 Mandates</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Dashboard Core Grid (Asset Allocation + Goal Tracking) -->
+<div class="max-w-7xl mx-auto w-full px-gutter mb-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left 7 Cols: Asset Allocation & Market Cap Visualization -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-title-lg text-title-lg text-on-surface font-semibold">Asset Allocation &amp; Diversification</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Recommended target: 70% Equity / 20% Debt / 10% Tactical</p>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">Healthy Balance</span>
+</div>
+<!-- Multi-tier Stacked Progress Visualizer -->
+<div class="space-y-space-xs mb-space-md">
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden flex">
+<div class="h-full bg-primary-container transition-all" style="width: 72%;" title="Equity: 72%"></div>
+<div class="h-full bg-secondary-container transition-all" style="width: 18%;" title="Debt: 18%"></div>
+<div class="h-full bg-primary-fixed-dim transition-all" style="width: 8%;" title="Hybrid: 8%"></div>
+<div class="h-full bg-surface-container-highest transition-all" style="width: 2%;" title="Liquid: 2%"></div>
+</div>
+<div class="flex flex-wrap items-center justify-between font-label-sm text-label-sm text-on-surface-variant pt-1">
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span> Equity 72%
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span> Debt 18%
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim"></span> Hybrid 8%
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></span> Liquid 2%
+              </span>
+</div>
+</div>
+<!-- Breakdown Distribution Matrix -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-space-md bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between mb-2">
+<span class="font-title-md text-title-md text-on-surface">Equity Segment</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">₹20,48,550</span>
+</div>
+<div class="space-y-1.5 font-label-sm text-label-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Large Cap (45%)</span>
+<span class="text-on-surface font-semibold">₹9,21,848</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[45%] h-full bg-primary-container rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1">
+<span>Mid Cap (35%)</span>
+<span class="text-on-surface font-semibold">₹7,17,000</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[35%] h-full bg-on-tertiary-container rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1">
+<span>Small Cap (20%)</span>
+<span class="text-on-surface font-semibold">₹4,09,702</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[20%] h-full bg-secondary-container rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-between gap-space-xs">
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Debt &amp; Fixed Income</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Low volatility cushion</span>
+</div>
+<div class="text-right">
+<div class="font-title-md text-title-md text-on-surface font-bold">₹5,12,138</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">18.0% of portfolio</div>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Hybrid Multi-Asset</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dynamic asset allocation</span>
+</div>
+<div class="text-right">
+<div class="font-title-md text-title-md text-on-surface font-bold">₹2,27,616</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">8.0% of portfolio</div>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Liquid / Cash Equivalents</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Instant redemption fund</span>
+</div>
+<div class="text-right">
+<div class="font-title-md text-title-md text-on-surface font-bold">₹56,906</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">2.0% of portfolio</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Upcoming SIP Mandate Schedule Alert Box -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="p-2.5 rounded-lg bg-surface-container text-primary-container">
+<span class="material-symbols-outlined text-[24px]">event_repeat</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Next SIP Trigger: 5th October 2025</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">Active OTM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">₹15,000 scheduled across 2 equity schemes • Auto-Debit via HDFC Bank Mandate •••• 4019</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" type="button">Manage OTM</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md transition-colors" type="button">Skip / Pause</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 5 Cols: Financial Goal Tracking Cards -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-title-lg text-title-lg text-on-surface font-semibold">Goal-Based Roadmaps</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Linked to your mutual fund portfolios</p>
+</div>
+<button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<!-- Goal 1: Retirement Corpus -->
+<div class="mb-space-md p-space-md bg-surface-container-low rounded-xl">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="p-1.5 rounded bg-surface-container-highest text-primary-container">
+<span class="material-symbols-outlined text-[18px]">beach_access</span>
+</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Retirement Corpus</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-tertiary-container font-label-sm text-label-sm font-semibold">42% on track</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mt-2 mb-1">
+<span>Accumulated: <strong class="text-on-surface font-semibold">₹18,20,000</strong></span>
+<span>Target: ₹2,00,00,000</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 42%;"></div>
+</div>
+<div class="flex items-center justify-between pt-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>Monthly SIP: <span class="text-on-surface font-medium">₹20,000</span></span>
+<span>Horizon: 18 Years remaining</span>
+</div>
+</div>
+<!-- Goal 2: Child Higher Education -->
+<div class="mb-space-md p-space-md bg-surface-container-low rounded-xl">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="p-1.5 rounded bg-surface-container-highest text-secondary-container">
+<span class="material-symbols-outlined text-[18px]">school</span>
+</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Child Higher Education</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-tertiary-container font-label-sm text-label-sm font-semibold">85% on track</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mt-2 mb-1">
+<span>Accumulated: <strong class="text-on-surface font-semibold">₹7,45,000</strong></span>
+<span>Target: ₹50,00,000</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container rounded-full" style="width: 85%;"></div>
+</div>
+<div class="flex items-center justify-between pt-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>Monthly SIP: <span class="text-on-surface font-medium">₹10,000</span></span>
+<span>Target Year: 2034</span>
+</div>
+</div>
+<!-- Goal 3: Emergency Reserve -->
+<div class="mb-space-sm p-space-md bg-surface-container-low rounded-xl">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="p-1.5 rounded bg-surface-container-highest text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Emergency Reserve</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-tertiary-container font-label-sm text-label-sm font-semibold">92% on track</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mt-2 mb-1">
+<span>Accumulated: <strong class="text-on-surface font-semibold">₹2,80,000</strong></span>
+<span>Target: ₹5,00,000</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim rounded-full" style="width: 92%;"></div>
+</div>
+<div class="flex items-center justify-between pt-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>Parked in: Liquid &amp; Arbitrage</span>
+<span>6 Months of Expenses</span>
+</div>
+</div>
+</div>
+<!-- Add New Goal CTA Button -->
+<button class="w-full py-2.5 px-4 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2 mt-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">add_task</span>
+<span>+ Add New Financial Goal</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Holdings Portfolio Section -->
+<div class="max-w-7xl mx-auto w-full px-gutter mb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Section Header with Tabs and Filter -->
+<div class="p-space-lg pb-space-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-title-lg text-title-lg text-on-surface font-semibold">Mutual Fund Holdings &amp; Scheme Ledger</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Consolidated folio balances synced across AMC RTAs (CAMS &amp; KFintech)</p>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1">
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold shrink-0" type="button">
+            All Holdings (7)
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium transition-colors shrink-0" type="button">
+            Equity (4)
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium transition-colors shrink-0" type="button">
+            Debt (2)
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium transition-colors shrink-0" type="button">
+            Hybrid (1)
+          </button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-lg font-semibold" scope="col">Scheme &amp; Category</th>
+<th class="py-space-sm px-space-md font-semibold text-right" scope="col">Units &amp; Folio</th>
+<th class="py-space-sm px-space-md font-semibold text-right" scope="col">Net Invested</th>
+<th class="py-space-sm px-space-md font-semibold text-right" scope="col">Current Value</th>
+<th class="py-space-sm px-space-md font-semibold text-right" scope="col">Abs. Return</th>
+<th class="py-space-sm px-space-md font-semibold text-right" scope="col">XIRR</th>
+<th class="py-space-sm px-space-lg font-semibold text-center" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary text-label-md shrink-0">PP</div>
+<div class="min-w-0">
+<div class="font-title-md text-title-md text-on-surface font-semibold truncate">Parag Parikh Flexi Cap Fund</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Flexi Cap</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Regular Growth</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<div class="font-label-md text-label-md font-semibold text-on-surface">14,219.040</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Folio: 10482910</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums font-label-md text-label-md">₹6,50,000</td>
+<td class="py-space-md px-space-md text-right tabular-nums font-title-md text-title-md font-bold text-primary">₹10,42,800</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<span class="inline-flex items-center font-semibold text-on-tertiary-container font-label-md text-label-md">+60.4%</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">+₹3,92,800</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<span class="px-2 py-0.5 rounded bg-surface-container font-semibold text-on-tertiary-fixed-variant font-label-sm text-label-sm">19.4%</span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-primary font-label-sm text-label-sm transition-colors" type="button">Invest More</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Redeem or Switch" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-lowest">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center font-bold text-secondary text-label-md shrink-0">MA</div>
+<div class="min-w-0">
+<div class="font-title-md text-title-md text-on-surface font-semibold truncate">Mirae Asset Large &amp; Midcap Fund</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Large &amp; Mid Cap</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Growth</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<div class="font-label-md text-label-md font-semibold text-on-surface">5,432.110</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Folio: 8839201</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums font-label-md text-label-md">₹4,00,000</td>
+<td class="py-space-md px-space-md text-right tabular-nums font-title-md text-title-md font-bold text-primary">₹5,88,400</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<span class="inline-flex items-center font-semibold text-on-tertiary-container font-label-md text-label-md">+47.1%</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">+₹1,88,400</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<span class="px-2 py-0.5 rounded bg-surface-container font-semibold text-on-tertiary-fixed-variant font-label-sm text-label-sm">17.2%</span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-primary font-label-sm text-label-sm transition-colors" type="button">Invest More</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Redeem or Switch" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center font-bold text-on-primary-fixed-variant text-label-md shrink-0">HD</div>
+<div class="min-w-0">
+<div class="font-title-md text-title-md text-on-surface font-semibold truncate">HDFC Mid-Cap Opportunities Fund</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Mid Cap</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Growth</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<div class="font-label-md text-label-md font-semibold text-on-surface">3,294.550</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Folio: 5529102</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums font-label-md text-label-md">₹3,50,000</td>
+<td class="py-space-md px-space-md text-right tabular-nums font-title-md text-title-md font-bold text-primary">₹5,12,000</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<span class="inline-flex items-center font-semibold text-on-tertiary-container font-label-md text-label-md">+46.3%</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">+₹1,62,000</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<span class="px-2 py-0.5 rounded bg-surface-container font-semibold text-on-tertiary-fixed-variant font-label-sm text-label-sm">18.1%</span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-primary font-label-sm text-label-sm transition-colors" type="button">Invest More</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Redeem or Switch" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-lowest">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center font-bold text-on-tertiary-container text-label-md shrink-0">SB</div>
+<div class="min-w-0">
+<div class="font-title-md text-title-md text-on-surface font-semibold truncate">SBI Small Cap Fund</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Small Cap</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Growth</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<div class="font-label-md text-label-md font-semibold text-on-surface">2,010.820</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Folio: 2291029</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums font-label-md text-label-md">₹2,50,000</td>
+<td class="py-space-md px-space-md text-right tabular-nums font-title-md text-title-md font-bold text-primary">₹3,72,010</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<span class="inline-flex items-center font-semibold text-on-tertiary-container font-label-md text-label-md">+48.8%</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">+₹1,22,010</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<span class="px-2 py-0.5 rounded bg-surface-container font-semibold text-on-tertiary-fixed-variant font-label-sm text-label-sm">21.0%</span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-primary font-label-sm text-label-sm transition-colors" type="button">Invest More</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Redeem or Switch" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center font-bold text-secondary text-label-md shrink-0">IC</div>
+<div class="min-w-0">
+<div class="font-title-md text-title-md text-on-surface font-semibold truncate">ICICI Prudential All Seasons Bond Fund</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Debt / Dynamic</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Growth</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<div class="font-label-md text-label-md font-semibold text-on-surface">8,912.440</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Folio: 9912019</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums font-label-md text-label-md">₹3,00,000</td>
+<td class="py-space-md px-space-md text-right tabular-nums font-title-md text-title-md font-bold text-primary">₹3,30,000</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<span class="inline-flex items-center font-semibold text-on-tertiary-container font-label-md text-label-md">+10.0%</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">+₹30,000</div>
+</td>
+<td class="py-space-md px-space-md text-right tabular-nums">
+<span class="px-2 py-0.5 rounded bg-surface-container font-semibold text-on-tertiary-fixed-variant font-label-sm text-label-sm">7.8%</span>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-primary font-label-sm text-label-sm transition-colors" type="button">Invest More</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Redeem or Switch" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination Info -->
+<div class="p-space-md bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+          Showing 5 of 7 active folios • All valuations reflect official AMFI NAVs as of previous closing session.
+        </div>
+<button class="inline-flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant font-label-md text-label-md font-semibold transition-colors" type="button">
+<span>View All 7 Holdings &amp; Closed Folios</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Interactive Utility Row (Reports & Advisor Connect) -->
+<div class="max-w-7xl mx-auto w-full px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Quick Statements & Tax Packs -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Download Statements &amp; Tax Packs</h3>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">description</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Instant one-click exports for your Chartered Accountant or Income Tax filing.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs">
+<button class="p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg text-left transition-colors flex flex-col justify-between" type="button">
+<span class="material-symbols-outlined text-primary text-[20px] mb-1">picture_as_pdf</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">CAS Statement</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Consolidated CAMS</div>
+</div>
+</button>
+<button class="p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg text-left transition-colors flex flex-col justify-between" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px] mb-1">receipt_long</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Capital Gains</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">FY 2024-25 Realized</div>
+</div>
+</button>
+<button class="p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg text-left transition-colors flex flex-col justify-between" type="button">
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px] mb-1">query_stats</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">P&amp;L Statement</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Comprehensive XLSX</div>
+</div>
+</button>
+</div>
+</div>
+<!-- Dedicated MFD Fiduciary Advisor Box -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Professional studio portrait of Rajesh Sharma, a certified Indian mutual fund distributor and wealth advisor, dressed in a formal charcoal blazer with a reassuring friendly smile, softly lit institutional office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXwCv61MGl7doGzd4XJ0K4HKOyW2L1lpoyeGpTTnGdz2YUrDOOL857mVytBmstTw3ueHSOIg8lLZfDHwqL0elVALAI6KaU2PKR2S24Jxs4UZ-9zyzF-Ryc1_Bw_hl_LFTkuzTXvkWXR58w_jnTOZA98iLZQrFycKSZD-xADaNFYgcXM2TBHsSk9xIyE2hGSw6hW41oAe5p-gO36LFAW_zmTjF6iqJPm7PmYI3wDl9i4tRjDZAffqE6oQ"/>
+<span class="material-symbols-outlined absolute -bottom-1 -right-1 text-[16px] bg-surface-container-lowest text-on-tertiary-container rounded-full">verified</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface font-semibold">Rajesh Sharma</div>
+<div class="font-label-sm text-label-sm text-secondary font-semibold">AMFI Registered MFD • ARN-184920</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Assigned Wealth Manager &amp; Fiduciary Partner</div>
+</div>
+</div>
+<span class="hidden sm:inline-block px-2.5 py-1 rounded bg-surface-container text-on-tertiary-container font-label-sm text-label-sm font-semibold">Available</span>
+</div>
+<div class="pt-space-sm flex flex-col sm:flex-row items-center gap-space-xs">
+<button class="w-full sm:w-1/2 py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Request Portfolio Review</span>
+</button>
+<button class="w-full sm:w-1/2 py-2 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">chat</span>
+<span>WhatsApp Advisor</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant pt-space-xl pb-space-lg shadow-[0_-1px_8px_rgba(0,0,0,0.03)]"><div class="max-w-7xl mx-auto px-gutter"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg pb-space-lg"><div class="space-y-space-xs"><div class="font-title-lg text-title-lg text-primary">Vridhi Wealth</div><p class="font-body-sm text-body-sm text-on-surface-variant">A fiduciary wealth and mutual fund distribution platform facilitating goal-based investments and Systematic Investment Plans (SIPs).</p><div class="pt-space-xs text-on-secondary-container font-label-sm text-label-sm">AMFI Reg. No. ARN-184920</div></div><div><h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-space-sm">Investment Solutions</h4><ul class="space-y-space-xs font-body-sm text-body-sm"><li><a class="hover:text-on-surface transition-colors" href="#">Equity &amp; Flexi Cap Funds</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Debt &amp; Liquid Schemes</a></li><li><a class="hover:text-on-surface transition-colors" href="#">ELSS Tax Saving Funds</a></li><li><a class="hover:text-on-surface transition-colors" href="#">SIP Calculator &amp; Goal Planner</a></li></ul></div><div><h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-space-sm">Statutory &amp; Ecosystem</h4><ul class="space-y-space-xs font-body-sm text-body-sm"><li><a class="hover:text-on-surface transition-colors" href="#">AMFI India Official Portal</a></li><li><a class="hover:text-on-surface transition-colors" href="#">SEBI SCORES Grievance Redressal</a></li><li><a class="hover:text-on-surface transition-colors" href="#">BSE StAR MF Platform</a></li><li><a class="hover:text-on-surface transition-colors" href="#">NSE NMF II Infrastructure</a></li></ul></div><div><h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-space-sm">Help &amp; Redressal</h4><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">Dedicated MFD Support Desk</p><div class="font-label-md text-label-md text-on-surface font-semibold">1800-425-9988</div><div class="font-body-sm text-body-sm text-on-surface-variant">care@vridhiwealth.com</div><div class="font-label-sm text-label-sm text-on-surface-variant mt-space-xs">Mon - Sat: 9:00 AM - 6:00 PM IST</div></div></div><div class="pt-space-md mt-space-md border-t border-outline-variant/30 space-y-space-xs text-center md:text-left"><p class="font-body-sm text-body-sm leading-relaxed text-on-surface-variant/90"><strong class="text-on-surface font-semibold">Regulatory Disclosures:</strong> Mutual fund investments are subject to market risks, read all scheme related documents carefully. Vridhi Wealth is an AMFI Registered Mutual Fund Distributor with ARN-184920. Not an investment adviser. Execution-only / distributor platform. Past performance is not indicative of future returns.</p><div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs text-label-sm font-label-sm text-on-surface-variant"><span>© 2025 Vridhi Wealth Solutions LLP. All rights reserved.</span><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">SEBI Disclosures</a><a class="hover:text-on-surface transition-colors" href="#">Code of Conduct</a></div></div></div></div></footer></body></html>

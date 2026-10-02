@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vridhi Wealth — Master Design System & UI Component Library</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"SF Mono"', 'Consolas', 'monospace']
+          },
+          colors: {
+            brand: {
+              900: '#071F18',
+              800: '#0D2F24',
+              700: '#154637',
+              600: '#1F5E4B',
+              500: '#2E7D63',
+              100: '#E6F4EE',
+              50: '#F2F9F5'
+            },
+            growth: {
+              DEFAULT: '#10B981',
+              dark: '#059669',
+              light: '#ECFDF5'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-num {
+      font-feature-settings: "tnum" 1, "lnum" 1;
+    }
+    .token-swatch {
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .token-swatch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(13, 47, 36, 0.12);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-900 bg-[#F8FAFC]">
+
+  <!-- Top System Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-5">
+        <img src="https://lh3.googleusercontent.com/aida/AEtjO1WhcJU0mSzHM-QgnhWfTR-gQafggMmxOPy8NbTHkUzPELTnDMYbux5hR7HScaE44bYV72IwF4tyq3ANF96ib1DQ-8dVYOOE1Hdju559zGY0dC9nDcUYMoOUerblgkZc9yTC5oxPYkYS6I-8hTg-_jZ5FXoVjA-owZYRrZGTB8v_mznWHDz-4Fvx8Rk3SNB88BOxWQWJGSFkFiwO1R_m_dfWk-ButWy_0CuEZB0zF--gMNfXCTKWjqsJ7G0g" alt="Vridhi Wealth Logo" class="h-10 w-auto">
+        <div class="h-6 w-px bg-slate-200"></div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#0D2F24] text-white">Design System v1.0</span>
+          <span class="text-xs text-slate-500 font-medium hidden sm:inline-block">Universal Token Architecture • Investor & Admin MFD</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-lg">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          SEBI / AMFI Compliant UI Tokens
+        </div>
+        <button class="text-xs font-semibold text-slate-600 hover:text-slate-900 border border-slate-200 hover:bg-slate-50 px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+          Export Tailwind Config
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Nav Anchor Strip -->
+  <div class="bg-white border-b border-slate-200 sticky top-20 z-30 shadow-xs">
+    <div class="max-w-[1440px] mx-auto px-6 flex items-center gap-6 overflow-x-auto custom-scrollbar py-3 text-xs font-semibold text-slate-600">
+      <a href="#foundations" class="text-[#0D2F24] hover:text-[#0D2F24] whitespace-nowrap flex items-center gap-1.5 font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#0D2F24]"></span> Foundations & Colors
+      </a>
+      <a href="#typography" class="hover:text-[#0D2F24] whitespace-nowrap">Typography & Rupee Format</a>
+      <a href="#buttons-inputs" class="hover:text-[#0D2F24] whitespace-nowrap">Buttons & Form Controls</a>
+      <a href="#badges-tags" class="hover:text-[#0D2F24] whitespace-nowrap">Status Badges & Risk-o-meter</a>
+      <a href="#cards-tables" class="hover:text-[#0D2F24] whitespace-nowrap">Cards & Data Tables</a>
+      <a href="#charts" class="hover:text-[#0D2F24] whitespace-nowrap">Financial Charts & Visuals</a>
+      <a href="#overlays" class="hover:text-[#0D2F24] whitespace-nowrap">Modals, Alerts & Toasts</a>
+      <a href="#system-states" class="hover:text-[#0D2F24] whitespace-nowrap">Empty, Loading & Error States</a>
+    </div>
+  </div>
+
+  <main class="max-w-[1440px] mx-auto px-6 py-10 space-y-16">
+
+    <!-- SECTION 1: FOUNDATIONS & COLOR PALETTE -->
+    <section id="foundations" class="space-y-6">
+      <div class="border-b border-slate-200 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-2">
+        <div>
+          <div class="text-xs font-bold text-emerald-700 tracking-wider uppercase mb-1">01 / Master Color Tokens</div>
+          <h2 class="text-2xl font-bold text-slate-900">Color System & Semantic Tokens</h2>
+          <p class="text-sm text-slate-500 mt-1">Calibrated for fiduciary authority, high visual trust, and clean Indian currency readability without crypto/trading visual noise.</p>
+        </div>
+        <div class="text-xs text-slate-500 font-mono">Tailwind: bg-brand-800 • text-slate-900 • bg-growth</div>
+      </div>
+
+      <!-- Palette Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- 1. Primary Fiduciary Brand -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-slate-900">Primary Brand (Forest)</h3>
+            <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-slate-100 text-slate-600">Core</span>
+          </div>
+          <div class="space-y-2.5">
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#071F18] text-white">
+              <div>
+                <div class="text-xs font-bold">Primary Deepest</div>
+                <div class="text-[11px] opacity-75 font-mono">#071F18 • brand-900</div>
+              </div>
+              <span class="text-[10px] font-mono opacity-60">High Contrast</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#0D2F24] text-white ring-2 ring-[#0D2F24] ring-offset-2">
+              <div>
+                <div class="text-xs font-bold flex items-center gap-1.5">
+                  Primary Base
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                </div>
+                <div class="text-[11px] opacity-80 font-mono">#0D2F24 • brand-800</div>
+              </div>
+              <span class="text-[10px] font-mono bg-white/20 px-1.5 py-0.5 rounded font-semibold">Primary CTA</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#154637] text-white">
+              <div>
+                <div class="text-xs font-bold">Primary Hover</div>
+                <div class="text-[11px] opacity-75 font-mono">#154637 • brand-700</div>
+              </div>
+              <span class="text-[10px] font-mono opacity-60">Interactive</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#E6F4EE] text-[#0D2F24] border border-[#0D2F24]/10">
+              <div>
+                <div class="text-xs font-bold">Primary Surface Tint</div>
+                <div class="text-[11px] text-emerald-800 font-mono">#E6F4EE • brand-100</div>
+              </div>
+              <span class="text-[10px] font-mono text-emerald-800 font-semibold">Tabs / Pills</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Growth & Positive Returns -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-slate-900">Success & Growth (Returns)</h3>
+            <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">+XIRR</span>
+          </div>
+          <div class="space-y-2.5">
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#059669] text-white">
+              <div>
+                <div class="text-xs font-bold">Success Dark</div>
+                <div class="text-[11px] opacity-80 font-mono">#059669 • emerald-600</div>
+              </div>
+              <span class="text-[10px] font-mono opacity-80">High Contrast</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#10B981] text-white">
+              <div>
+                <div class="text-xs font-bold">Success Base (Growth)</div>
+                <div class="text-[11px] opacity-80 font-mono">#10B981 • emerald-500</div>
+              </div>
+              <span class="text-[10px] font-mono bg-white/20 px-1.5 py-0.5 rounded font-semibold">+Returns</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#ECFDF5] text-emerald-900 border border-emerald-200">
+              <div>
+                <div class="text-xs font-bold">Success Container</div>
+                <div class="text-[11px] text-emerald-700 font-mono">#ECFDF5 • emerald-50</div>
+              </div>
+              <span class="text-[10px] font-mono text-emerald-700 font-semibold">Badges</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-white border border-emerald-300 text-emerald-800">
+              <div>
+                <div class="text-xs font-bold">Success Border Line</div>
+                <div class="text-[11px] text-slate-500 font-mono">#A7F3D0 • emerald-200</div>
+              </div>
+              <span class="text-[10px] font-mono text-emerald-600">Perimeter</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Warning, Error & Regulatory Alerts -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-slate-900">Warning & Critical Alerts</h3>
+            <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200">Alerts</span>
+          </div>
+          <div class="space-y-2.5">
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#D97706] text-white">
+              <div>
+                <div class="text-xs font-bold">Warning Base</div>
+                <div class="text-[11px] opacity-80 font-mono">#D97706 • amber-600</div>
+              </div>
+              <span class="text-[10px] font-mono opacity-80">Mandate Expiry</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#FFFBEB] text-amber-900 border border-amber-200">
+              <div>
+                <div class="text-xs font-bold">Warning Container</div>
+                <div class="text-[11px] text-amber-700 font-mono">#FFFBEB • amber-50</div>
+              </div>
+              <span class="text-[10px] font-mono text-amber-700 font-semibold">Action Req</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#DC2626] text-white">
+              <div>
+                <div class="text-xs font-bold">Error / Negative Base</div>
+                <div class="text-[11px] opacity-80 font-mono">#DC2626 • red-600</div>
+              </div>
+              <span class="text-[10px] font-mono opacity-80">Debit Failed</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#FEF2F2] text-red-900 border border-red-200">
+              <div>
+                <div class="text-xs font-bold">Error Container</div>
+                <div class="text-[11px] text-red-700 font-mono">#FEF2F2 • red-50</div>
+              </div>
+              <span class="text-[10px] font-mono text-red-700 font-semibold">Validation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Neutrals & Canvas Surfaces -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-slate-900">Surfaces & Text Grayscale</h3>
+            <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-slate-100 text-slate-600">Structure</span>
+          </div>
+          <div class="space-y-2.5">
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#0F172A] text-white">
+              <div>
+                <div class="text-xs font-bold">Text Primary</div>
+                <div class="text-[11px] opacity-80 font-mono">#0F172A • slate-900</div>
+              </div>
+              <span class="text-[10px] font-mono opacity-80">Headings/Values</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#475569] text-white">
+              <div>
+                <div class="text-xs font-bold">Text Secondary</div>
+                <div class="text-[11px] opacity-80 font-mono">#475569 • slate-600</div>
+              </div>
+              <span class="text-[10px] font-mono opacity-80">Body / Labels</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-[#F8FAFC] text-slate-800 border border-slate-200">
+              <div>
+                <div class="text-xs font-bold">Canvas Background</div>
+                <div class="text-[11px] text-slate-500 font-mono">#F8FAFC • slate-50</div>
+              </div>
+              <span class="text-[10px] font-mono text-slate-600">Base Page</span>
+            </div>
+            <div class="token-swatch flex items-center justify-between p-3 rounded-xl bg-white text-slate-800 border border-slate-200">
+              <div>
+                <div class="text-xs font-bold">Card Surface & Borders</div>
+                <div class="text-[11px] text-slate-500 font-mono">#FFFFFF / Border #E2E8F0</div>
+              </div>
+              <span class="text-[10px] font-mono text-slate-500">Containers</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: TYPOGRAPHY & RUPEE FINANCIAL VALUE SYSTEM -->
+    <section id="typography" class="space-y-6">
+      <div class="border-b border-slate-200 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-2">
+        <div>
+          <div class="text-xs font-bold text-emerald-700 tracking-wider uppercase mb-1">02 / Type Hierarchy & Numerical Craft</div>
+          <h2 class="text-2xl font-bold text-slate-900">Typography & Indian Financial Number Formatting</h2>
+          <p class="text-sm text-slate-500 mt-1">Font family: <span class="font-semibold text-slate-700">Plus Jakarta Sans</span> paired with strict Indian Rupee comma notation (e.g. ₹10,00,000 / ₹48.65 Cr).</p>
+        </div>
+        <div class="text-xs text-slate-500 font-mono">tabular-nums lining-nums</div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- Type Scale Showcase -->
+        <div class="lg:col-span-7 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+          <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider text-slate-500">Text Hierarchy & Weight Scale</h3>
+          
+          <div class="space-y-6 divide-y divide-slate-100">
+            <div class="pt-2 flex items-baseline justify-between gap-4">
+              <div>
+                <span class="text-xs font-mono text-slate-400 block mb-1">H1 / 30px Bold • Tracking -0.02em</span>
+                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Investor Portfolio Dashboard</h1>
+              </div>
+              <span class="text-xs font-mono text-slate-400">text-3xl font-extrabold</span>
+            </div>
+
+            <div class="pt-4 flex items-baseline justify-between gap-4">
+              <div>
+                <span class="text-xs font-mono text-slate-400 block mb-1">H2 / 22px SemiBold • Tracking -0.015em</span>
+                <h2 class="text-xl font-bold text-slate-900">Mutual Fund Holdings & Scheme Ledger</h2>
+              </div>
+              <span class="text-xs font-mono text-slate-400">text-xl font-bold</span>
+            </div>
+
+            <div class="pt-4 flex items-baseline justify-between gap-4">
+              <div>
+                <span class="text-xs font-mono text-slate-400 block mb-1">H3 / 17px SemiBold</span>
+                <h3 class="text-[17px] font-semibold text-slate-800">Parag Parikh Flexi Cap Fund - Growth</h3>
+              </div>
+              <span class="text-xs font-mono text-slate-400">text-[17px] font-semibold</span>
+            </div>
+
+            <div class="pt-4 flex items-baseline justify-between gap-4">
+              <div>
+                <span class="text-xs font-mono text-slate-400 block mb-1">Body Regular / 14px • 1.5 line-height</span>
+                <p class="text-sm text-slate-600 max-w-xl">
+                  Investments in mutual funds are subject to market risks. Read all scheme related documents carefully before investing through your registered MFD (ARN-184920).
+                </p>
+              </div>
+              <span class="text-xs font-mono text-slate-400">text-sm text-slate-600</span>
+            </div>
+
+            <div class="pt-4 flex items-baseline justify-between gap-4">
+              <div>
+                <span class="text-xs font-mono text-slate-400 block mb-1">Small Text / 12px Medium • Tracking 0.01em</span>
+                <p class="text-xs text-slate-400 font-medium">
+                  SEBI Circular SEBI/HO/MIRSD/DoP/P/CIR/2022/117 • Connected to BSE StAR MF API • 256-bit Encryption
+                </p>
+              </div>
+              <span class="text-xs font-mono text-slate-400">text-xs text-slate-400</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Financial Numerical Rules -->
+        <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider text-slate-500">Financial Value Formatting</h3>
+              <span class="text-xs font-bold text-[#0D2F24] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Indian Lakhs & Crores</span>
+            </div>
+
+            <div class="space-y-4">
+              <!-- Mega KPI Metric -->
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-xs font-semibold text-slate-500 mb-1">Total AUM / Portfolio Valuation</div>
+                <div class="text-3xl font-extrabold text-slate-900 font-num tracking-tight flex items-baseline gap-2">
+                  ₹28,45,210<span class="text-base font-semibold text-slate-500">.00</span>
+                </div>
+                <div class="text-xs font-semibold text-emerald-700 flex items-center gap-1.5 mt-2">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                  +₹14,820 (+0.52%) Today
+                </div>
+              </div>
+
+              <!-- MFD Business Crores Metric -->
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-xs font-semibold text-slate-500 mb-1">Distributor Monthly SIP Inflow Book</div>
+                <div class="text-2xl font-bold text-slate-900 font-num flex items-baseline gap-2">
+                  ₹22.40 <span class="text-base font-medium text-slate-500">L/mo</span>
+                  <span class="text-xs font-mono font-normal text-slate-400 ml-auto">412 Mandates</span>
+                </div>
+                <div class="text-xs text-slate-500 mt-1">Average Ticket Size: <span class="font-semibold text-slate-800 font-num">₹5,436</span> / SIP</div>
+              </div>
+
+              <!-- Compounding Growth XIRR Format -->
+              <div class="p-4 rounded-xl bg-[#0D2F24] text-white">
+                <div class="flex items-center justify-between text-xs text-emerald-300 font-medium">
+                  <span>ANNUALIZED PORTFOLIO XIRR</span>
+                  <span class="px-2 py-0.5 rounded bg-white/10 text-[11px]">Benchmark: +12.4%</span>
+                </div>
+                <div class="text-3xl font-extrabold text-white font-num mt-1 flex items-baseline gap-2">
+                  +16.85% <span class="text-xs font-normal text-emerald-300">p.a.</span>
+                </div>
+                <div class="text-xs text-emerald-200/80 mt-2">
+                  Absolute Gain: <span class="font-bold text-white font-num">+₹8,95,210 (+45.9%)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-[11px] text-slate-400 bg-slate-50 p-3 rounded-lg border border-slate-200">
+            <strong>Rule:</strong> Indian comma grouping applies: 2 digits after first 3 digits from right (<code class="font-mono text-slate-700">₹10,00,000</code> not <code class="font-mono line-through text-slate-400">1,000,000</code>).
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: REUSABLE BUTTONS & FORM INPUTS -->
+    <section id="buttons-inputs" class="space-y-6">
+      <div class="border-b border-slate-200 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-2">
+        <div>
+          <div class="text-xs font-bold text-emerald-700 tracking-wider uppercase mb-1">03 / Interactive Elements</div>
+          <h2 class="text-2xl font-bold text-slate-900">Buttons, Form Fields & Dropdowns</h2>
+          <p class="text-sm text-slate-500 mt-1">Consistent 8px corner radii, high-contrast borders, ergonomic 42px touch targets, and unmistakable focus rings.</p>
+        </div>
+        <div class="text-xs text-slate-500 font-mono">rounded-lg h-10.5 px-4 focus:ring-2</div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- Buttons Matrix -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+          <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider text-slate-500">Button Variants & States</h3>
+
+          <div class="space-y-4">
+            <!-- Primary Action -->
+            <div class="flex flex-wrap items-center gap-3">
+              <button class="bg-[#0D2F24] hover:bg-[#154637] text-white font-semibold text-xs px-5 py-2.5 rounded-lg shadow-sm transition-all flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                Invest Now (Primary)
+              </button>
+              <button class="bg-[#0D2F24] opacity-70 text-white font-semibold text-xs px-5 py-2.5 rounded-lg cursor-not-allowed flex items-center gap-2">
+                <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                Routing to BSE StAR...
+              </button>
+              <button disabled class="bg-slate-200 text-slate-400 font-semibold text-xs px-5 py-2.5 rounded-lg cursor-not-allowed">
+                Disabled State
+              </button>
+            </div>
+
+            <!-- Secondary & Outline Buttons -->
+            <div class="flex flex-wrap items-center gap-3">
+              <button class="bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-semibold text-xs px-4 py-2.5 rounded-lg shadow-2xs transition-colors flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Download CAS
+              </button>
+              <button class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                + Onboard Client
+              </button>
+              <button class="bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors">
+                Stop / Pause SIP
+              </button>
+            </div>
+
+            <!-- Ghost & Micro Actions -->
+            <div class="flex items-center gap-4 pt-2">
+              <button class="text-xs font-semibold text-[#0D2F24] hover:text-emerald-700 underline underline-offset-4">
+                View Scheme Factsheet →
+              </button>
+              <button class="text-xs font-medium text-slate-500 hover:text-slate-800 flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                Reset Filters
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Fields & Dropdowns -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider text-slate-500">Input Fields & Select Controls</h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Currency Input with Prefix -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5">Monthly SIP Amount</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 font-semibold text-sm">₹</div>
+                <input type="text" value="5,000" class="w-full pl-8 pr-3 py-2 bg-white border border-slate-300 rounded-lg text-sm font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0D2F24] focus:border-[#0D2F24] font-num">
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1">Min. ₹1,000 • In multiples of ₹500</p>
+            </div>
+
+            <!-- Dropdown Select -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5">SIP Deduction Date</label>
+              <div class="relative">
+                <select class="w-full appearance-none bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0D2F24] pr-8">
+                  <option>10th of every month (Recommended)</option>
+                  <option>5th of every month</option>
+                  <option>15th of every month</option>
+                  <option>25th of every month</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-2.5 pointer-events-none text-slate-400">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+              </div>
+              <p class="text-[11px] text-emerald-700 font-medium mt-1">✓ Bank e-NACH active</p>
+            </div>
+
+            <!-- Global Search with Keyboard Badge -->
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5">Global Scheme & Client Search</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <input type="text" placeholder="Search by fund name, AMC, PAN, or folio (e.g. Parag Parikh, HDFC)..." class="w-full pl-9 pr-16 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0D2F24] focus:border-[#0D2F24]">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <kbd class="px-1.5 py-0.5 text-[10px] font-mono font-semibold text-slate-500 bg-white border border-slate-300 rounded shadow-xs">Ctrl+K</kbd>
+                </div>
+              </div>
+            </div>
+
+            <!-- Error Validation State -->
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-semibold text-red-600 mb-1.5">Investor PAN Verification</label>
+              <input type="text" value="ABCDE123" class="w-full px-3 py-2 bg-red-50/50 border border-red-300 rounded-lg text-xs font-medium text-red-900 focus:outline-none focus:ring-2 focus:ring-red-500">
+              <p class="text-[11px] text-red-600 mt-1 flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Invalid PAN format. PAN must be exactly 10 alphanumeric characters (e.g. ABCDE1234F).
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: STATUS BADGES, PILLS & SEBI RISK-O-METER -->
+    <section id="badges-tags" class="space-y-6">
+      <div class="border-b border-slate-200 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-2">
+        <div>
+          <div class="text-xs font-bold text-emerald-700 tracking-wider uppercase mb-1">04 / Badges, Tags & Regulatory Indicators</div>
+          <h2 class="text-2xl font-bold text-slate-900">Regulatory Badges, KYC Tags & SEBI Risk-o-Meter</h2>
+          <p class="text-sm text-slate-500 mt-1">Official AMFI and SEBI statutory visual badges ensuring statutory transparency and instant visual scanning.</p>
+        </div>
+        <div class="text-xs text-slate-500 font-mono">SEBI 6-Tier Risk Scale</div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- KYC & Operational Status Badges -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+          <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider text-slate-500">KYC & Investor Operational Badges</h3>
+
+          <div class="flex flex-wrap gap-2.5 items-center">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> KYC OK (Verified)
+            </span>
+
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> DigiLocker Pending
+            </span>
+
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-red-50 text-red-800 border border-red-200">
+              <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Auto-Debit Failed
+            </span>
+
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#0D2F24] text-white">
+              ARN-184920
+            </span>
+
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
+              HNI Client (&gt;₹50L)
+            </span>
+
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> BSE StAR MF Synced
+            </span>
+          </div>
+
+          <!-- Scheme Category Tags -->
+          <div class="pt-2 border-t border-slate-100">
+            <div class="text-xs font-semibold text-slate-500 mb-2.5">Mutual Fund Scheme Category Pills</div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer">Flexi Cap</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer">Large & Mid Cap</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-100 text-emerald-900 font-bold">ELSS / Tax Saver 80C</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer">Liquid & Overnight</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer">Dynamic Asset Allocation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEBI Statutory Risk-O-Meter Component -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider text-slate-500">SEBI Statutory Risk-O-Meter</h3>
+            <span class="text-[11px] font-bold text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded">Current: Very High Risk</span>
+          </div>
+          <p class="text-xs text-slate-500">Mandated color calibration across the 6 statutory SEBI risk tiers for mutual fund prospectuses.</p>
+
+          <!-- The Multi-Segment Bar -->
+          <div class="space-y-2 pt-2">
+            <div class="grid grid-cols-6 gap-1 h-3 rounded-full overflow-hidden p-0.5 bg-slate-100 border border-slate-200">
+              <div class="bg-emerald-400 rounded-l" title="Low"></div>
+              <div class="bg-emerald-500" title="Low to Moderate"></div>
+              <div class="bg-yellow-400" title="Moderate"></div>
+              <div class="bg-amber-400" title="Moderately High"></div>
+              <div class="bg-orange-500" title="High"></div>
+              <div class="bg-red-500 rounded-r relative" title="Very High">
+                <span class="absolute -top-1 right-1/2 translate-x-1/2 w-2 h-2 rounded-full bg-white ring-2 ring-red-600"></span>
+              </div>
+            </div>
+            <div class="grid grid-cols-6 text-[10px] font-semibold text-slate-500 text-center">
+              <span>Low</span>
+              <span>Low-Mod</span>
+              <span>Moderate</span>
+              <span>Mod-High</span>
+              <span>High</span>
+              <span class="text-red-600 font-bold">Very High</span>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-slate-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>Investors understand that their principal will be at <strong>Very High Risk</strong> in equity-oriented schemes. Direct folio link maintained via BSE StAR MF.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: CARDS & DATA TABLES -->
+    <section id="cards-tables" class="space-y-6">
+      <div class="border-b border-slate-200 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-2">
+        <div>
+          <div class="text-xs font-bold text-emerald-700 tracking-wider uppercase mb-1">05 / Container & Tabular Patterns</div>
+          <h2 class="text-2xl font-bold text-slate-900">Cards, Segmented Tabs & Data Tables</h2>
+          <p class="text-sm text-slate-500 mt-1">Built to present complex Indian client folios, AMC schemes, and goal milestones with immaculate visual order.</p>
+        </div>
+        <div class="text-xs text-slate-500 font-mono">Border-slate-200 • text-right nums</div>
+      </div>
+
+      <!-- Segmented Tabs -->
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div class="inline-flex p-1 rounded-xl bg-slate-200/80 border border-slate-200 text-xs font-semibold">
+          <button class="px-4 py-2 rounded-lg bg-white text-slate-900 shadow-xs">All Holdings (7)</button>
+          <button class="px-4 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition-colors">Equity (4)</button>
+          <button class="px-4 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition-colors">Debt & Liquid (2)</button>
+          <button class="px-4 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition-colors">Hybrid (1)</button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button class="text-xs font-semibold text-slate-600 border border-slate-200 bg-white px-3 py-2 rounded-lg hover:bg-slate-50 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
+            Filter Columns
+          </button>
+          <button class="text-xs font-semibold text-slate-600 border border-slate-200 bg-white px-3 py-2 rounded-lg hover:bg-slate-50 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg>
+            Sort: Highest AUM
+          </button>
+        </div>
+      </div>
+
+      <!-- Master Table Component -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-slate-50/80 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                <th class="py-3.5 px-5">Client / Scheme Description</th>
+                <th class="py-3.5 px-4">Folio / Identification</th>
+                <th class="py-3.5 px-4 text-right">Net Invested</th>
+                <th class="py-3.5 px-4 text-right">Current Valuation</th>
+                <th class="py-3.5 px-4 text-right">Returns (XIRR)</th>
+                <th class="py-3.5 px-4 text-center">KYC / Mandate</th>
+                <th class="py-3.5 px-5 text-right">Quick Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 font-medium">
+              <!-- Row 1 -->
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="py-3.5 px-5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-[#0D2F24] text-emerald-400 font-bold flex items-center justify-center text-xs">AV</div>
+                    <div>
+                      <div class="font-bold text-slate-900">Aditya Verma</div>
+                      <div class="text-[11px] text-slate-400 font-mono">+91 98401 23940</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="font-mono text-slate-600 font-semibold">ABCPV••••F</span>
+                  <div class="text-[11px] text-slate-400">8 Active Folios</div>
+                </td>
+                <td class="py-3.5 px-4 text-right font-num text-slate-600">₹19,50,000</td>
+                <td class="py-3.5 px-4 text-right font-num font-bold text-slate-900">₹28,45,210</td>
+                <td class="py-3.5 px-4 text-right">
+                  <span class="inline-block px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 font-bold font-num border border-emerald-200">+16.85%</span>
+                </td>
+                <td class="py-3.5 px-4 text-center">
+                  <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> KYC OK
+                  </span>
+                </td>
+                <td class="py-3.5 px-5 text-right">
+                  <button class="font-semibold text-xs text-[#0D2F24] hover:text-emerald-700 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg transition-colors">
+                    Manage →
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="py-3.5 px-5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-900 font-bold flex items-center justify-center text-xs">PS</div>
+                    <div>
+                      <div class="font-bold text-slate-900 flex items-center gap-1.5">
+                        Pooja Sundaram
+                        <span class="text-[10px] bg-amber-100 text-amber-900 px-1 rounded font-bold">HNI</span>
+                      </div>
+                      <div class="text-[11px] text-slate-400 font-mono">+91 99204 88120</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="font-mono text-slate-600 font-semibold">BDKPS••••K</span>
+                  <div class="text-[11px] text-slate-400">14 Active Folios</div>
+                </td>
+                <td class="py-3.5 px-4 text-right font-num text-slate-600">₹52,00,000</td>
+                <td class="py-3.5 px-4 text-right font-num font-bold text-slate-900">₹74,10,000</td>
+                <td class="py-3.5 px-4 text-right">
+                  <span class="inline-block px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 font-bold font-num border border-emerald-200">+18.20%</span>
+                </td>
+                <td class="py-3.5 px-4 text-center">
+                  <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> KYC OK
+                  </span>
+                </td>
+                <td class="py-3.5 px-5 text-right">
+                  <button class="font-semibold text-xs text-[#0D2F24] hover:text-emerald-700 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg transition-colors">
+                    Manage →
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="py-3.5 px-5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-red-100 text-red-900 font-bold flex items-center justify-center text-xs">MN</div>
+                    <div>
+                      <div class="font-bold text-slate-900">Meera Nair</div>
+                      <div class="text-[11px] text-slate-400 font-mono">+91 97412 11984</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="font-mono text-slate-600 font-semibold">CZQPN••••A</span>
+                  <div class="text-[11px] text-amber-600">DigiLocker Step 2</div>
+                </td>
+                <td class="py-3.5 px-4 text-right font-num text-slate-400">₹0.00</td>
+                <td class="py-3.5 px-4 text-right font-num text-slate-400">Awaiting SIP</td>
+                <td class="py-3.5 px-4 text-right text-slate-400 font-num">-</td>
+                <td class="py-3.5 px-4 text-center">
+                  <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> DigiLocker Pending
+                  </span>
+                </td>
+                <td class="py-3.5 px-5 text-right">
+                  <button class="font-semibold text-xs text-amber-900 hover:bg-amber-100 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-lg transition-colors">
+                    Resend Link
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+          <span>Showing 3 of 348 active investor folios under ARN-184920</span>
+          <div class="flex items-center gap-1">
+            <button class="px-2.5 py-1 rounded bg-white border border-slate-200 text-slate-700 font-bold shadow-2xs">1</button>
+            <button class="px-2.5 py-1 rounded hover:bg-white text-slate-600">2</button>
+            <button class="px-2.5 py-1 rounded hover:bg-white text-slate-600">3</button>
+            <span class="px-1 text-slate-400">...</span>
+            <button class="px-2.5 py-1 rounded hover:bg-white text-slate-600">87</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: FINANCIAL CHARTS & VISUAL ASSET ALLOCATION -->
+    <section id="charts" class="space-y-6">
+      <div class="border-b border-slate-200 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-2">
+        <div>
+          <div class="text-xs font-bold text-emerald-700 tracking-wider uppercase mb-1">06 / Data Visualization Patterns</div>
+          <h2 class="text-2xl font-bold text-slate-900">Asset Allocation Bars, Ring Gauges & NAV Curves</h2>
+          <p class="text-sm text-slate-500 mt-1">Clean, non-distracting SVG visualization primitives comparing scheme NAV against benchmark indices.</p>
+        </div>
+        <div class="text-xs text-slate-500 font-mono">SVG • Emerald Alpha Splines</div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Asset Allocation Strip -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-slate-900">Portfolio Asset Allocation</h3>
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Balanced</span>
+          </div>
+
+          <!-- Multi-Segment Allocation Bar -->
+          <div class="space-y-2">
+            <div class="h-3.5 w-full rounded-full overflow-hidden flex bg-slate-100">
+              <div class="bg-[#0D2F24]" style="width: 72%" title="Equity 72%"></div>
+              <div class="bg-amber-500" style="width: 18%" title="Debt 18%"></div>
+              <div class="bg-emerald-400" style="width: 8%" title="Hybrid 8%"></div>
+              <div class="bg-blue-400" style="width: 2%" title="Liquid 2%"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 pt-2 text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded bg-[#0D2F24]"></span>
+                <span class="text-slate-600 font-medium">Equity (72%)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded bg-amber-500"></span>
+                <span class="text-slate-600 font-medium">Debt (18%)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded bg-emerald-400"></span>
+                <span class="text-slate-600 font-medium">Hybrid (8%)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded bg-blue-400"></span>
+                <span class="text-slate-600 font-medium">Liquid (2%)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-[11px] text-slate-500 bg-slate-50 p-3 rounded-xl border border-slate-200">
+            Recommended model for 35yo investor: <span class="font-bold text-slate-800">70% Equity / 20% Debt / 10% Tactical</span>.
+          </div>
+        </div>
+
+        <!-- Historical Performance Chart Line -->
+        <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900">Historical NAV vs Benchmark (Nifty 500 TRI)</h3>
+              <p class="text-xs text-slate-500">CAGR Growth of ₹10,000 Invested over 3 Years</p>
+            </div>
+            <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold text-slate-600">
+              <button class="px-2 py-0.5 rounded">1Y</button>
+              <button class="px-2 py-0.5 rounded bg-white shadow-2xs text-[#0D2F24] font-bold">3Y</button>
+              <button class="px-2 py-0.5 rounded">5Y</button>
+              <button class="px-2 py-0.5 rounded">Since Inception</button>
+            </div>
+          </div>
+
+          <!-- Clean SVG Chart -->
+          <div class="h-44 w-full relative pt-4">
+            <svg class="w-full h-full" viewBox="0 0 500 140" fill="none" preserveAspectRatio="none">
+              <!-- Grid Lines -->
+              <line x1="0" y1="20" x2="500" y2="20" stroke="#F1F5F9" stroke-dasharray="3 3"/>
+              <line x1="0" y1="70" x2="500" y2="70" stroke="#F1F5F9" stroke-dasharray="3 3"/>
+              <line x1="0" y1="120" x2="500" y2="120" stroke="#F1F5F9" stroke-dasharray="3 3"/>
+              
+              <!-- Gradient Fill for Fund Curve -->
+              <defs>
+                <linearGradient id="fundGrowthGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#10B981" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="#10B981" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,120 C100,110 180,95 250,65 C320,35 400,28 500,10 L500,140 L0,140 Z" fill="url(#fundGrowthGrad)" />
+
+              <!-- Benchmark Line (Nifty 500) -->
+              <path d="M0,120 C100,115 180,105 250,85 C320,65 400,50 500,40" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 4"/>
+
+              <!-- Scheme Curve (Parag Parikh Flexi Cap) -->
+              <path d="M0,120 C100,110 180,95 250,65 C320,35 400,28 500,10" stroke="#0D2F24" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="500" cy="10" r="4.5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <div class="flex items-center justify-between text-xs pt-1 border-t border-slate-100">
+            <div class="flex items-center gap-4">
+              <span class="flex items-center gap-1.5 font-bold text-slate-800">
+                <span class="w-3 h-0.5 bg-[#0D2F24]"></span> Scheme (+180.6% 3Y)
+              </span>
+              <span class="flex items-center gap-1.5 text-slate-500 font-medium">
+                <span class="w-3 h-0.5 bg-slate-400 border-dashed"></span> Nifty 500 TRI (+118.2% 3Y)
+              </span>
+            </div>
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+              Alpha Generated: +4.82%
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: MODALS, ALERTS, TOASTS & REGULATORY BANNERS -->
+    <section id="overlays" class="space-y-6">
+      <div class="border-b border-slate-200 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-2">
+        <div>
+          <div class="text-xs font-bold text-emerald-700 tracking-wider uppercase mb-1">07 / Notifications & Overlays</div>
+          <h2 class="text-2xl font-bold text-slate-900">Modals, Alerts, Toast Banners & Disclaimers</h2>
+          <p class="text-sm text-slate-500 mt-1">Institutional alerts and compliant feedback patterns for SIP mandates and KYC operations.</p>
+        </div>
+        <div class="text-xs text-slate-500 font-mono">Role: Dialog / Alert</div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- System Alerts & Banners -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider text-slate-500">Contextual Alerts & Tickers</h3>
+
+          <!-- Warning Action-Required Ticker -->
+          <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 text-xs">!</div>
+            <div class="text-xs space-y-1">
+              <div class="font-bold text-amber-900 flex items-center gap-2">
+                Action Required (14 Urgent Distributor Items)
+                <span class="text-[10px] bg-amber-200/80 px-1.5 py-0.5 rounded text-amber-900">BSE StAR Notice</span>
+              </div>
+              <p class="text-amber-800">5 SIP Mandates are expiring within 14 days and 3 clients require DigiLocker biometric re-authentication.</p>
+              <div class="pt-1 flex gap-2">
+                <button class="font-bold text-amber-900 underline">Send WhatsApp Reminders</button>
+                <span class="text-amber-400">•</span>
+                <button class="font-bold text-amber-900 underline">View Folios</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Success Alert -->
+          <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between text-xs">
+            <div class="flex items-center gap-2.5 text-emerald-900">
+              <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <div>
+                <span class="font-bold">SIP Mandate Registered Successfully!</span>
+                <div class="text-emerald-700 text-[11px]">e-NACH approved by HDFC Bank (UMRN: 98401928371902)</div>
+              </div>
+            </div>
+            <span class="text-emerald-800 font-bold font-num">10th of Month</span>
+          </div>
+
+          <!-- Toast Notification Stack -->
+          <div class="p-4 rounded-xl bg-[#0D2F24] text-white flex items-center justify-between shadow-lg">
+            <div class="flex items-center gap-3 text-xs">
+              <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+              <span>Portfolio statement dispatched to <strong>aditya.verma@gmail.com</strong></span>
+            </div>
+            <button class="text-slate-400 hover:text-white text-xs font-bold">✕</button>
+          </div>
+        </div>
+
+        <!-- Modal Component Demonstration -->
+        <div class="bg-slate-100 p-6 rounded-2xl border border-slate-200 shadow-inner flex flex-col justify-center">
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-xl p-6 max-w-md mx-auto w-full space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <h4 class="text-base font-bold text-slate-900">Confirm Mutual Fund SIP</h4>
+                <p class="text-xs text-slate-500">Direct BSE StAR MF Order Routing</p>
+              </div>
+              <button class="text-slate-400 hover:text-slate-700 text-sm font-bold">✕</button>
+            </div>
+
+            <div class="space-y-3 text-xs">
+              <div class="flex justify-between py-1.5 border-b border-slate-100">
+                <span class="text-slate-500">Selected Scheme</span>
+                <span class="font-bold text-slate-900 text-right">Parag Parikh Flexi Cap</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-slate-100">
+                <span class="text-slate-500">Monthly Installment</span>
+                <span class="font-bold text-slate-900 font-num">₹5,000 / month</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-slate-100">
+                <span class="text-slate-500">Auto-Debit Bank</span>
+                <span class="font-semibold text-slate-800">HDFC Bank •••• 4912</span>
+              </div>
+            </div>
+
+            <div class="pt-2 flex items-center gap-2">
+              <button class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs py-2.5 rounded-lg">Cancel</button>
+              <button class="flex-1 bg-[#0D2F24] hover:bg-[#154637] text-white font-semibold text-xs py-2.5 rounded-lg shadow-sm">Authorize & Submit</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 8: EMPTY STATES, LOADING SKELETONS & ERROR RESILIENCE -->
+    <section id="system-states" class="space-y-6">
+      <div class="border-b border-slate-200 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-2">
+        <div>
+          <div class="text-xs font-bold text-emerald-700 tracking-wider uppercase mb-1">08 / Edge & Feedback States</div>
+          <h2 class="text-2xl font-bold text-slate-900">Empty States, Loading Skeletons & Error Handling</h2>
+          <p class="text-sm text-slate-500 mt-1">Guarantees a premium experience during zero-holdings, network latencies, or bank sync interruptions.</p>
+        </div>
+        <div class="text-xs text-slate-500 font-mono">Graceful Degradation</div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- 1. Empty State -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center space-y-4 flex flex-col items-center justify-center">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center border border-emerald-100">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">No Active SIPs Found</h4>
+            <p class="text-xs text-slate-500 mt-1 max-w-xs">Start a disciplined systematic investment plan starting with as low as ₹500/month.</p>
+          </div>
+          <button class="bg-[#0D2F24] text-white text-xs font-semibold px-4 py-2 rounded-lg hover:bg-[#154637]">
+            + Explore Curated Funds
+          </button>
+        </div>
+
+        <!-- 2. Loading Skeleton Card -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="h-4 w-28 bg-slate-200 rounded animate-pulse"></div>
+            <div class="h-4 w-12 bg-slate-100 rounded animate-pulse"></div>
+          </div>
+          <div class="h-8 w-40 bg-slate-200 rounded animate-pulse"></div>
+          <div class="space-y-2 pt-2">
+            <div class="h-2.5 w-full bg-slate-100 rounded animate-pulse"></div>
+            <div class="h-2.5 w-3/4 bg-slate-100 rounded animate-pulse"></div>
+            <div class="h-2.5 w-1/2 bg-slate-100 rounded animate-pulse"></div>
+          </div>
+          <div class="pt-2 flex gap-2">
+            <div class="h-8 flex-1 bg-slate-100 rounded-lg animate-pulse"></div>
+            <div class="h-8 flex-1 bg-slate-100 rounded-lg animate-pulse"></div>
+          </div>
+        </div>
+
+        <!-- 3. Error Fallback State -->
+        <div class="bg-white p-6 rounded-2xl border border-red-200 shadow-sm text-center space-y-4 flex flex-col items-center justify-center">
+          <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center border border-red-100">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">Unable to Fetch NAV Rates</h4>
+            <p class="text-xs text-slate-500 mt-1 max-w-xs">BSE StAR MF sync timed out. Previous closing NAV (14 Oct 2024) remains displayed.</p>
+          </div>
+          <button class="border border-slate-300 text-slate-700 text-xs font-semibold px-4 py-2 rounded-lg hover:bg-slate-50 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+            Retry Connection
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 9: IMPLEMENTATION CODE RECIPE -->
+    <section class="bg-[#071F18] text-white p-8 rounded-3xl space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-emerald-900/60 pb-6">
+        <div>
+          <div class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">Tailwind CSS & Next.js Quick-Start</div>
+          <h3 class="text-xl font-bold text-white">Production Tailwind Config Mapping</h3>
+        </div>
+        <div class="text-xs text-emerald-300 bg-white/10 px-3 py-1.5 rounded-lg border border-white/10 font-mono">
+          tailwind.config.ts / React 19 / TypeScript
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 font-mono text-xs text-emerald-100">
+        <div class="bg-black/40 p-5 rounded-xl border border-emerald-900/40 space-y-2">
+          <div class="text-slate-400 font-bold mb-2">// 1. Tailwind Color Extend Definition</div>
+          <pre class="overflow-x-auto text-[11px] leading-relaxed text-emerald-200">
+colors: {
+  brand: {
+    DEFAULT: '#0D2F24', // Fiduciary Emerald Forest
+    hover: '#154637',
+    tint: '#E6F4EE',
+    dark: '#071F18'
+  },
+  growth: {
+    DEFAULT: '#10B981', // Returns & Positive XIRR
+    dark: '#059669',
+    light: '#ECFDF5'
+  },
+  surface: '#FFFFFF',
+  canvas: '#F8FAFC'
+}
+          </pre>
+        </div>
+
+        <div class="bg-black/40 p-5 rounded-xl border border-emerald-900/40 space-y-2">
+          <div class="text-slate-400 font-bold mb-2">// 2. Indian Rupee Formatter Utility (TypeScript)</div>
+          <pre class="overflow-x-auto text-[11px] leading-relaxed text-emerald-200">
+export const formatINR = (value: number): string => {
+  return new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    maximumFractionDigits: 0
+  }).format(value);
+};
+// formatINR(2845210) => "₹28,45,210"
+// formatINR(486500000) => "₹48.65 Cr" via custom Crores pipe
+          </pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Disclosures -->
+  <footer class="bg-white border-t border-slate-200 py-8 px-6 text-xs text-slate-500">
+    <div class="max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="https://lh3.googleusercontent.com/aida/AEtjO1WhcJU0mSzHM-QgnhWfTR-gQafggMmxOPy8NbTHkUzPELTnDMYbux5hR7HScaE44bYV72IwF4tyq3ANF96ib1DQ-8dVYOOE1Hdju559zGY0dC9nDcUYMoOUerblgkZc9yTC5oxPYkYS6I-8hTg-_jZ5FXoVjA-owZYRrZGTB8v_mznWHDz-4Fvx8Rk3SNB88BOxWQWJGSFkFiwO1R_m_dfWk-ButWy_0CuEZB0zF--gMNfXCTKWjqsJ7G0g" alt="Vridhi Wealth" class="h-6 w-auto opacity-80">
+        <span>© 2025 Vridhi Wealth Solutions LLP. All tokens AMFI & SEBI compliant.</span>
+      </div>
+      <div class="flex gap-4 font-semibold text-slate-600">
+        <span>Investor Portal</span>
+        <span>•</span>
+        <span>Distributor Admin Portal</span>
+        <span>•</span>
+        <span>BSE StAR MF API Layer</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

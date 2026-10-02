@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>Login - Vridhi Wealth</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed-dim": "#ffb77d", "primary": "#001911", "outline-variant": "#c1c8c3", "primary-fixed-dim": "#aacebe", "on-tertiary-fixed": "#002113", "on-tertiary": "#ffffff", "on-surface": "#0b1c30", "error-container": "#ffdad6", "surface-tint": "#446558", "tertiary-container": "#00301e", "on-secondary-fixed": "#2f1500", "on-secondary": "#ffffff", "tertiary": "#00190e", "secondary-fixed": "#ffdcc3", "tertiary-fixed": "#6ffbbe", "surface-bright": "#f8f9ff", "error": "#ba1a1a", "on-secondary-fixed-variant": "#6e3900", "surface-container-highest": "#d3e4fe", "on-tertiary-container": "#00a472", "secondary-container": "#fe932c", "inverse-primary": "#aacebe", "surface-container-high": "#dce9ff", "outline": "#717974", "on-surface-variant": "#414845", "on-primary-fixed-variant": "#2c4d41", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#005236", "secondary": "#904d00", "primary-fixed": "#c6ebda", "surface-dim": "#cbdbf5", "tertiary-fixed-dim": "#4edea3", "surface-container": "#e5eeff", "on-error-container": "#93000a", "on-primary": "#ffffff", "on-error": "#ffffff", "on-secondary-container": "#663500", "on-background": "#0b1c30", "surface": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "inverse-surface": "#213145", "surface-container-low": "#eff4ff", "on-primary-fixed": "#002117", "surface-variant": "#d3e4fe", "on-primary-container": "#759889", "primary-container": "#0d2f24", "background": "#f8f9ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "gutter-mobile": "1rem", "margin": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "gutter": "1.5rem" }, "fontFamily": { "body-md": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "display": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "metric-val": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "title-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "title-lg": ["Plus Jakarta Sans"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "metric-val": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-11 h-11 -ml-2 flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span></button><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #0d2f24
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WhcJU0mSzHM-QgnhWfTR-gQafggMmxOPy8NbTHkUzPELTnDMYbux5hR7HScaE44bYV72IwF4tyq3ANF96ib1DQ-8dVYOOE1Hdju559zGY0dC9nDcUYMoOUerblgkZc9yTC5oxPYkYS6I-8hTg-_jZ5FXoVjA-owZYRrZGTB8v_mznWHDz-4Fvx8Rk3SNB88BOxWQWJGSFkFiwO1R_m_dfWk-ButWy_0CuEZB0zF--gMNfXCTKWjqsJ7G0g"/><div class="flex flex-col"><span class="font-title-lg text-title-lg text-primary leading-tight tracking-tight">Vridhi Wealth</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none tracking-wide uppercase">Login</span></div></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full px-gutter-mobile py-space-md max-w-[430px] mx-auto">
+<!-- Step switcher pill (Delightful preview switch) -->
+<div class="flex items-center justify-between p-1 bg-surface-container rounded-full mb-space-lg shadow-sm">
+<button class="flex-1 py-1.5 px-3 rounded-full font-label-md text-label-md text-on-primary bg-primary shadow-sm transition-all duration-200 flex items-center justify-center gap-1" id="step1-pill" onclick="switchStep(1)" type="button">
+<span class="material-symbols-outlined text-[15px]">smartphone</span>
+<span>1. Mobile</span>
+</button>
+<button class="flex-1 py-1.5 px-3 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200 flex items-center justify-center gap-1" id="step2-pill" onclick="switchStep(2)" type="button">
+<span class="material-symbols-outlined text-[15px]">pin</span>
+<span>2. Enter OTP</span>
+</button>
+</div>
+<!-- Central Card Shell -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-md flex flex-col">
+<!-- Brand Header -->
+<div class="flex flex-col items-center text-center mb-space-lg">
+<div class="h-10 w-auto flex items-center justify-center mb-space-sm">
+<img alt="Vridhi Wealth Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WhcJU0mSzHM-QgnhWfTR-gQafggMmxOPy8NbTHkUzPELTnDMYbux5hR7HScaE44bYV72IwF4tyq3ANF96ib1DQ-8dVYOOE1Hdju559zGY0dC9nDcUYMoOUerblgkZc9yTC5oxPYkYS6I-8hTg-_jZ5FXoVjA-owZYRrZGTB8v_mznWHDz-4Fvx8Rk3SNB88BOxWQWJGSFkFiwO1R_m_dfWk-ButWy_0CuEZB0zF--gMNfXCTKWjqsJ7G0g"/>
+</div>
+<!-- Fiduciary Badge -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified_user</span>
+<span>AMFI Registered MFD • ARN-184920</span>
+</div>
+</div>
+<!-- VIEW 1: Mobile Number Entry -->
+<div class="flex flex-col" id="view-step-1">
+<div class="mb-space-lg">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-1">Welcome back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Enter your registered mobile number to continue</p>
+</div>
+<form class="flex flex-col gap-space-md" id="mobile-form" onsubmit="event.preventDefault(); switchStep(2);">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between">
+<span>Mobile Number</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">OTP Login</span>
+</label>
+<div class="flex items-center bg-surface-container-low rounded-xl px-3 py-1 transition-all focus-within:bg-surface-container-lowest focus-within:shadow-sm">
+<div class="flex items-center gap-1.5 pr-2.5 py-2 mr-2 text-on-surface font-title-md text-title-md">
+<span class="text-base select-none">🇮🇳</span>
+<span class="font-semibold">+91</span>
+</div>
+<input class="w-full bg-transparent font-title-md text-title-md text-on-surface placeholder:text-outline outline-none tracking-wide" id="mobile-input" inputmode="numeric" maxlength="10" oninput="validateMobile(this)" placeholder="Enter 10-digit mobile number" type="tel" value="98765 43210"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant px-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">lock</span>
+            We'll send a 6-digit verification code
+          </p>
+</div>
+<button class="w-full h-12 bg-primary-container text-on-primary rounded-xl font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm active:scale-[0.99] transition-transform hover:opacity-95 mt-space-xs" type="submit">
+<span>Continue</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- VIEW 2: OTP Verification -->
+<div class="hidden flex flex-col" id="view-step-2">
+<div class="mb-space-md">
+<div class="flex items-center justify-between mb-1">
+<h1 class="font-headline-md text-headline-md text-on-surface">Verify Mobile</h1>
+<button class="font-label-sm text-label-sm text-secondary font-semibold hover:underline flex items-center gap-0.5" onclick="switchStep(1)" type="button">
+<span class="material-symbols-outlined text-[13px]">edit</span>
+<span>Edit</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Enter the 6-digit OTP sent to <span class="font-medium text-on-surface" id="display-number">+91 98765 43210</span>
+</p>
+</div>
+<!-- 6 Digits Inputs -->
+<form class="flex flex-col gap-space-lg" id="otp-form" onsubmit="event.preventDefault(); simulateSuccess();">
+<div class="flex items-center justify-between gap-1.5 my-space-xs" id="otp-container">
+<input class="otp-box w-12 h-13 text-center bg-surface-container-low text-on-surface font-title-lg text-title-lg rounded-lg outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" inputmode="numeric" maxlength="1" type="text" value="4"/>
+<input class="otp-box w-12 h-13 text-center bg-surface-container-low text-on-surface font-title-lg text-title-lg rounded-lg outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" inputmode="numeric" maxlength="1" type="text" value="8"/>
+<input class="otp-box w-12 h-13 text-center bg-surface-container-low text-on-surface font-title-lg text-title-lg rounded-lg outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" inputmode="numeric" maxlength="1" type="text" value="2"/>
+<input autofocus="" class="otp-box w-12 h-13 text-center bg-surface-container-low text-on-surface font-title-lg text-title-lg rounded-lg outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" inputmode="numeric" maxlength="1" type="text" value=""/>
+<input class="otp-box w-12 h-13 text-center bg-surface-container-low text-on-surface font-title-lg text-title-lg rounded-lg outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" inputmode="numeric" maxlength="1" type="text" value=""/>
+<input class="otp-box w-12 h-13 text-center bg-surface-container-low text-on-surface font-title-lg text-title-lg rounded-lg outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" inputmode="numeric" maxlength="1" type="text" value=""/>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">timer</span>
+            Resend OTP in <span class="font-semibold text-on-surface" id="countdown">00:28s</span>
+</span>
+<button class="font-label-sm text-label-sm text-outline cursor-not-allowed font-semibold transition-colors" disabled="" id="resend-btn" type="button">
+            Resend OTP
+          </button>
+</div>
+<button class="w-full h-12 bg-primary-container text-on-primary rounded-xl font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm active:scale-[0.99] transition-transform hover:opacity-95" id="verify-btn" type="submit">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Verify &amp; Continue</span>
+</button>
+</form>
+</div>
+<!-- Divider Decor -->
+<div class="relative my-space-lg flex items-center justify-center">
+<div class="w-full h-px bg-surface-container-high"></div>
+<span class="absolute bg-surface-container-lowest px-3 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">or</span>
+</div>
+<!-- New Investor Helper -->
+<div class="text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+        New investor?
+        <button class="font-semibold text-secondary hover:underline ml-1" type="button">
+          Create an account
+        </button>
+</p>
+</div>
+</div>
+<!-- Bottom Regulatory & Trust Note -->
+<div class="mt-space-lg flex flex-col items-center text-center gap-space-xs px-space-sm">
+<div class="flex items-center justify-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container">shield</span>
+        Bank-grade 256-bit encryption
+      </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">hub</span>
+        BSE StAR MF connected
+      </span>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-body-sm text-outline">
+<span>Zero commission direct portfolio tracking</span>
+</div>
+</div>
+</div>
+<script>
+  function switchStep(step) {
+    const v1 = document.getElementById('view-step-1');
+    const v2 = document.getElementById('view-step-2');
+    const p1 = document.getElementById('step1-pill');
+    const p2 = document.getElementById('step2-pill');
+    const mobileInput = document.getElementById('mobile-input');
+    const displayNumber = document.getElementById('display-number');
+
+    if (step === 1) {
+      v1.classList.remove('hidden');
+      v2.classList.add('hidden');
+      p1.className = 'flex-1 py-1.5 px-3 rounded-full font-label-md text-label-md text-on-primary bg-primary shadow-sm transition-all duration-200 flex items-center justify-center gap-1';
+      p2.className = 'flex-1 py-1.5 px-3 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200 flex items-center justify-center gap-1';
+    } else {
+      v1.classList.add('hidden');
+      v2.classList.remove('hidden');
+      p2.className = 'flex-1 py-1.5 px-3 rounded-full font-label-md text-label-md text-on-primary bg-primary shadow-sm transition-all duration-200 flex items-center justify-center gap-1';
+      p1.className = 'flex-1 py-1.5 px-3 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200 flex items-center justify-center gap-1';
+
+      if (mobileInput && displayNumber && mobileInput.value.trim().length > 0) {
+        displayNumber.textContent = '+91 ' + mobileInput.value.trim();
+      }
+
+      // focus next empty OTP box
+      setTimeout(() => {
+        const boxes = document.querySelectorAll('.otp-box');
+        for (let b of boxes) {
+          if (!b.value) {
+            b.focus();
+            break;
+          }
+        }
+      }, 50);
+    }
+  }
+
+  function validateMobile(input) {
+    input.value = input.value.replace(/[^0-9\s]/g, '');
+  }
+
+  // OTP inputs auto-advance interaction
+  const otpInputs = document.querySelectorAll('.otp-box');
+  otpInputs.forEach((input, idx) => {
+    input.addEventListener('input', (e) => {
+      if (e.target.value.length === 1 && idx < otpInputs.length - 1) {
+        otpInputs[idx + 1].focus();
+      }
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace' && !e.target.value && idx > 0) {
+        otpInputs[idx - 1].focus();
+      }
+    });
+  });
+
+  // Countdown timer simulation
+  let seconds = 28;
+  const countdownEl = document.getElementById('countdown');
+  const resendBtn = document.getElementById('resend-btn');
+
+  const timer = setInterval(() => {
+    if (seconds > 0) {
+      seconds--;
+      if (countdownEl) {
+        countdownEl.textContent = '00:' + (seconds < 10 ? '0' : '') + seconds + 's';
+      }
+    } else {
+      clearInterval(timer);
+      if (countdownEl) countdownEl.textContent = 'Expired';
+      if (resendBtn) {
+        resendBtn.disabled = false;
+        resendBtn.className = 'font-label-sm text-label-sm text-secondary font-bold hover:underline cursor-pointer transition-colors';
+      }
+    }
+  }, 1000);
+
+  function simulateSuccess() {
+    const btn = document.getElementById('verify-btn');
+    if (btn) {
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span><span>Securing Session...</span>';
+      setTimeout(() => {
+        btn.className = 'w-full h-12 bg-on-tertiary-container text-on-primary rounded-xl font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm';
+        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Authenticated!</span>';
+      }, 700);
+    }
+  }
+</script></main><footer class="w-full py-space-md px-gutter-mobile pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.03)] flex flex-col items-center justify-center gap-space-xs text-center"><div class="flex items-center justify-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><span class="flex items-center gap-1 font-semibold text-primary"><span class="material-symbols-outlined text-[14px]">verified_user</span> AMFI Registered MFD</span><span class="text-outline-variant">•</span><span>ARN-184920</span><span class="text-outline-variant">•</span><span>SEBI Compliant</span></div><p class="font-body-sm text-body-sm text-on-surface-variant/80">Investments in mutual funds are subject to market risks. Read all scheme related documents carefully.</p></footer></body></html>
